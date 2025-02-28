@@ -1,0 +1,221 @@
+﻿@using Ecommerces.Entity
+@model Ecommerces.Models.ProductTblDto
+@{
+	ViewData["Title"] = "ProductForm";
+	Layout = "~/Views/Shared/_AdminMaster.cshtml";
+}
+
+
+<form asp-action="ProductForm" asp-controller="ProductTbl" method="post" enctype="multipart/form-data">
+	<div class="container-fluid">
+		<!-- start page title -->
+		<input name="__RequestVerificationToken" type="hidden" value="eoOl4wDx8uNk-Zpr-d1zYT--xNyc3mw8x0aN4CXHJa0jjqCMyfIE2S_jC--6D1NYNn4bupqfP-Zx8fuNBwHijfBJ4ZY8jLXDwI-OLCZWhH81"><div class="validation-summary-valid" data-valmsg-summary="true">
+			<ul>
+				<li style="display:none"></li>
+			</ul>
+		</div>    <!-- end page title -->
+		<div class="card">
+			<div class="card-header">
+				<div class="d-flex justify-content-between align-content-center">
+					<h4>Product Form</h4>
+					<a href="@Url.Action("ProductManage" , "ProductTbl")" class="btn btn-primary"><i class="fa fa-angle-left"></i> Back</a>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="mb-3">
+					<label for="Name">Name</label>
+
+					<input class="form-control" type="text" asp-for="Name" />
+
+				</div>
+				<div class="mb-3">
+					<label for="Price">Price</label>
+
+					<input class="form-control" type="number" asp-for="Price" />
+
+				</div>
+				<div class="mb-3">
+					<label>Category</label>
+
+
+					<select class="form-control" id="CategoryDrop" asp-for="CatId" asp-items="ViewBag.Data">
+						<option value="0">-------SELECT CATEGORY-------</option>
+					</select>
+
+
+
+				</div>
+				<div class="mb-3">
+					<label>SubCategory</label>
+					<select class="form-control" id="SubDrop" asp-for="SubCatId">
+					</select>
+					<input type="hidden" asp-for="SubCatId" id="HidSubDrop" />
+
+				</div>
+
+				<div class="mb-3">
+					<label>Third Category</label>
+
+					<select class="form-control" id="ThierdCatDrop" asp-for="ThierdCatId">
+					</select>
+					<input type="hidden" asp-for="ThierdCatId" id="HidThierdDrop" />
+
+				</div>
+
+				<div class="mb-3">
+					<label>Brand</label>
+					<select class="form-control" id="BradnId" asp-for="BrandId" asp-items="ViewBag.BrandData">
+						<option value="0">-------SELECT BRAND-------</option>
+
+					</select>
+				</div>
+				<div class="row">
+					<div class="col-sm-8 col-12">
+						<div class="mb-3">
+							<label>Photo</label>
+							<input class="form-control" type="file" asp-for="Photo" value="" />
+
+						</div>
+					</div>
+					<div class="col-sm-4 col-12">
+						<div class="mb-3">
+							@if (Model != null)
+							{
+								@if (!string.IsNullOrEmpty(@Model.ProPhoto))
+								{
+									<img class="img-fluid rounded" src="~/@Model.ProPhoto" style="width:190px;height:150px;" />
+								}
+								else
+								{
+									<img src="@Url.Content("~/Content/image/no-image-available.png")" alt="No Image Available" />
+								}
+							}
+
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="mb-3">
+					<label for="Description">Description</label>
+					<textarea class="form-control" cols="20" asp-for="Description" rows="2"></textarea>
+
+				</div>
+
+
+				<div class="mb-3">
+					<label>Status</label>
+					<select class="form-control" asp-for="Status">
+						<option value="Select Status">Select Status</option>
+						<option value="Active">Active</option>
+						<option value="DeActive">DeActive</option>
+
+					</select>
+					<span class="field-validation-valid" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+				</div>
+
+
+			</div>
+
+
+			@if (this.ViewContext.RouteData.Values["id"] != null)
+			{
+				<div class="card-footer text-center">
+
+					<input type="submit" class="btn btn-primary waves-effect waves-light me-1" name="btn" value="Update" />
+
+				</div>
+			}
+			else
+			{
+				<div class="card-footer text-center">
+
+					<input type="submit" class="btn btn-primary" name="btn" value="Save" />
+
+				</div>
+			}
+			@if (ViewBag.Msg != null)
+			{
+				<script>
+					alert("@ViewBag.Msg");
+				</script>
+			}
+
+
+
+
+
+
+
+
+
+		</div>
+		<div class="card my-5">
+			<div class="card-header">
+
+				<div class="d-flex justify-content-between align-content-center">
+					<h4>Add Specification</h4>
+
+				</div>
+
+			</div>
+			<div class="card-body">
+				<p>
+					Onece You Add Product then After You Can Add Products.
+				</p>
+			</div>
+		</div>
+		<div class="card my-5">
+			<div class="card-header">
+
+				<div class="d-flex justify-content-between align-content-center">
+					<h4>Add Photos</h4>
+
+				</div>
+
+			</div>
+			<div class="card-body">
+				<p>
+					Onece You Add Product then After You Can Add Products Photos.
+				</p>
+			</div>
+		</div>
+
+
+	</div>
+</form>
+<script src="~/ajaxcall/producttbl.js"></script>
+
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script>
+		  var HidSubCatID = $("#HidSubDrop").val();
+
+		  window.onload = function () {
+
+		   var SubCatID = $("#CategoryDrop").val();
+		   if (SubCatID != "0") {
+			  FillSubCategory(SubCatID , HidSubCatID);
+		   }
+		  var HidThCatID = $("#HidThierdDrop").val();
+
+		   var ThierdCatId = $("#SubDrop").val();
+		   if (ThierdCatId != "0") {
+			  FillThirdCategory(ThierdCatId , HidThCatID);
+
+		   }
+
+	}
+
+			 $("#CategoryDrop").change(function () {
+			  var CatID = $("#CategoryDrop").val();
+			  FillSubCategory(CatID);
+			 });
+
+
+			 $("#SubDrop").change(function () {
+			 var SubCatId = $("#SubDrop").val();
+			   FillThirdCategory(SubCatId);
+			 });
+
+</script>

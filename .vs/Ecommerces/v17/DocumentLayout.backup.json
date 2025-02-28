@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|d:\\yash\\yash data\\.net\\database\\dotnetcore\\ecommerces\\ecommerces\\controllers\\categorytblcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|solutionrelative:ecommerces\\controllers\\categorytblcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|d:\\yash\\yash data\\.net\\database\\dotnetcore\\ecommerces\\ecommerces\\views\\categorytbl\\categorymanage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|solutionrelative:ecommerces\\views\\categorytbl\\categorymanage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|d:\\yash\\yash data\\.net\\database\\dotnetcore\\ecommerces\\ecommerces\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|solutionrelative:ecommerces\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|d:\\yash\\yash data\\.net\\database\\dotnetcore\\ecommerces\\ecommerces\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7651E949-2CDC-4B93-923C-000BA184B2AA}|Ecommerces\\Ecommerces.csproj|solutionrelative:ecommerces\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 121,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryTblController.cs",
+              "DocumentMoniker": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\Controllers\\CategoryTblController.cs",
+              "RelativeDocumentMoniker": "Ecommerces\\Controllers\\CategoryTblController.cs",
+              "ToolTip": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\Controllers\\CategoryTblController.cs",
+              "RelativeToolTip": "Ecommerces\\Controllers\\CategoryTblController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T14:47:41.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryManage.cshtml",
+              "DocumentMoniker": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\Views\\CategoryTbl\\CategoryManage.cshtml",
+              "RelativeDocumentMoniker": "Ecommerces\\Views\\CategoryTbl\\CategoryManage.cshtml",
+              "ToolTip": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\Views\\CategoryTbl\\CategoryManage.cshtml",
+              "RelativeToolTip": "Ecommerces\\Views\\CategoryTbl\\CategoryManage.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T05:31:20.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\Program.cs",
+              "RelativeDocumentMoniker": "Ecommerces\\Program.cs",
+              "ToolTip": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\Program.cs",
+              "RelativeToolTip": "Ecommerces\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T12:08:16.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\appsettings.json",
+              "RelativeDocumentMoniker": "Ecommerces\\appsettings.json",
+              "ToolTip": "D:\\YASH\\yash data\\.NET\\DataBase\\DotNetCore\\Ecommerces\\Ecommerces\\appsettings.json",
+              "RelativeToolTip": "Ecommerces\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-16T12:08:10.408Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

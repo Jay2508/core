@@ -1,0 +1,68 @@
+﻿@using Ecommerces.Entity
+@model Ecommerces.Models.SpecificationsTblDto
+
+@{
+    ViewData["Title"] = "SpecificationForm";
+    Layout = "~/Views/Shared/_AdminMaster.cshtml";
+}
+
+<form asp-action="SpecificationForm" asp-controller="SpecificationsTbl" method="post" enctype="multipart/form-data">
+	<div class="card">
+		<div class="card-header">
+			<h5>Specification Form</h5>
+
+		</div>
+		<div class="card-body">
+
+			<div class="form-group">
+				<label for="exampleInputEmail1">Category</label>
+				<div>
+
+					<input class="form-control" type="text" asp-for="SpecificationName" />
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Specification Type</label>
+				<select class="form-control" asp-for="SpecificationType">
+					<option value="--------Select SpecificationType-------">--------Select SpecificationType-------</option>
+					<option value="TEXT">TEXT</option>
+					<option value="OPTION">OPTION</option>
+
+				</select>
+
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Status</label>
+				<select class="form-control" asp-for="Status">
+					<option value="Select Status">Select Status</option>
+					<option value="Active">Active</option>
+					<option value="DeActive">DeActive</option>
+
+				</select>
+
+			</div>
+
+
+		</div>
+		@if (this.ViewContext.RouteData.Values["id"] != null)
+		{
+			<div class="card-footer text-center">
+				<input type="submit" class="btn btn-primary" name="btn" value="Update" />
+			</div>
+		}
+		else
+		{
+			<div class="card-footer text-center">
+				<input type="submit" class="btn btn-primary" name="btn" value="Save" />
+			</div>
+		}
+		@if (ViewBag.Msg != null)
+		{
+			<script>
+				alert("@ViewBag.Msg");
+			</script>
+		}
+	</div>
+</form>

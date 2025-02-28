@@ -1,0 +1,15 @@
+﻿@{
+	ViewData["Title"] = "HOMEIndex";
+	Layout = "~/Views/Shared/_ClientMaster.cshtml";
+}
+
+<div class="container">
+	<h5 class="text-center">HOME PAGE CALLED</h5>
+</div>
+
+@if (ViewBag.Msg != null)
+{
+    <script>
+        alert("@ViewBag.Msg");
+    </script>
+}

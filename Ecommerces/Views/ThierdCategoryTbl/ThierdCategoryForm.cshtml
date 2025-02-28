@@ -1,0 +1,134 @@
+﻿@using Ecommerces.Entity
+@model Ecommerces.Models.ThirdCategoryTblDto
+@{
+	ViewData["Title"] = "ThierdCategoryForm";
+	Layout = "~/Views/Shared/_AdminMaster.cshtml";
+}
+
+<form asp-action="ThierdCategoryForm" asp-controller="ThierdCategoryTbl" method="post" enctype="multipart/form-data">
+	<div class="card ">
+		<div class="card-header">
+			<h5>Category Form</h5>
+		</div>
+		<div class="card-body">
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Category</label>
+				<select class="form-control" id="CategoryDrop" asp-for="CatId" asp-items="ViewBag.Data">
+					<option value="0">-------SELECT CATEGORY-------</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">SubCategory</label>
+				<select class="form-control" id="SubDrop" asp-for="SubCatId">
+					<option value="0">-------SELECT SUBCATEGORY-------</option>
+
+				</select>
+				<input type="hidden" asp-for="SubCatId" id="HidSubDrop" />
+
+			</div>
+			<div class="row">
+				<div class="col-sm-8 col-12">
+					<div class="mb-3">
+						<label>Icon</label>
+
+						<input class="form-control" type="file" asp-for="Icon" value="" />
+
+					</div>
+
+				</div>
+				<div class="col-sm-4 col-12">
+					<div class="mb-3">
+
+						@if (Model != null)
+						{
+							@if (!string.IsNullOrEmpty(@Model.ThierdCategoryIcon))
+							{
+								<img class="img-fluid rounded" src="~/@Model.ThierdCategoryIcon" style="width:190px;height:150px;" />
+							}
+							else
+							{
+								<img src="@Url.Content("~/Content/image/no-image-available.png")" alt="No Image Available" />
+							}
+						}
+
+
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1">ThirdCategory</label>
+				<div>
+
+					<input class="form-control" type="text" asp-for="ThirdCategory" />
+
+				</div>
+
+
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Status</label>
+				<select class="form-control" asp-for="Status">
+					<option value="Select Status">Select Status</option>
+					<option value="Active">Active</option>
+					<option value="DeActive">DeActive</option>
+
+				</select>
+
+			</div>
+
+
+		</div>
+		@if (this.ViewContext.RouteData.Values["id"] != null)
+		{
+			<div class="card-footer text-center">
+
+				<input type="submit" class="btn btn-primary" name="btn" value="Update" />
+
+			</div>
+		}
+		else
+		{
+			<div class="card-footer text-center">
+
+				<input type="submit" class="btn btn-primary" name="btn" value="Save" />
+
+			</div>
+		}
+		@if (ViewBag.Msg != null)
+		{
+			<script>
+				alert("@ViewBag.Msg");
+			</script>
+		}
+
+	</div>
+
+
+</form>
+
+
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/ajaxcall/thierdcategorytbl.js"></script>
+
+<script>
+		var SUBCATDATA = $("#HidSubDrop").val();
+
+		window.onload = function () {
+
+			
+		var CATDATA = $("#CategoryDrop").val();
+		if (CATDATA != "0") {
+			FillSubCategory(CATDATA , SUBCATDATA);
+			alert(SUBCATDATA);
+		}
+
+		}
+
+	$("#CategoryDrop").change(function () {
+		var SubCataData = $("#CategoryDrop").val();
+		FillSubCategory(SubCataData);
+	});
+	// FillSubCategory();
+
+</script>

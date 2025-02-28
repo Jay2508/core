@@ -1,0 +1,60 @@
+﻿@using Ecommerces.Entity.Model
+@{
+    ViewData["Title"] = "BrandManage";
+    Layout = "~/Views/Shared/_AdminMaster.cshtml";
+}
+
+<h1>BrandManage</h1>
+
+<form asp-action="BrandManage" asp-controller="BrandTbl" method="post" enctype="multipart/form-data">
+	<div class="container">
+		<div class="card-body">
+			<div class="table">
+				<div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+				</div><div class="row">
+					<div class="col-sm-12">
+						<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%; text-align:center">
+							<thead>
+								<tr role="row">
+									<th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 195.2px;">No</th>
+									<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Brand</th>
+									<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Icon</th>
+									<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Status</th>
+									<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Edit</th>
+									<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending">Delete</th>
+
+								</tr>
+							</thead>
+							<tbody>
+
+								@foreach (var item in ViewData["BrandList"] as List<BrandTbl>)
+								{
+									<tr class="odd">
+										<td class="sorting_1">@item.BrandId</td>
+										<td>@item.Brand</td>
+										<td>
+											@if (!string.IsNullOrEmpty(item.icon))
+											{
+												<img src="~/@item.icon" style="width:140px;height:140px; border-radius: 15px;" />
+											}
+										</td>
+										<td>@item.Status</td>
+										<td><a asp-action="BrandForm" asp-controller="BrandTbl" asp-route-id="@item.BrandId" class="btn btn-success">Edit</a></td>
+
+										<td><a asp-action="Delete" asp-route-id="@item.BrandId" class="btn btn-danger" title="">Delete</a></td>
+
+									</tr>
+								}
+
+
+
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,67 @@
+﻿@* 
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Ecommerces.Entity.Model
+@using Ecommerces.Services
+
+<link rel="icon" href="~/wclient/assets/images/favicon/1.png" type="image/x-icon">
+<title>On-demand last-mile delivery</title>
+
+<!-- Google font -->
+<link href="~/wclient/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/elegant-icons.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/nice-select.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/slicknav.min.css" rel="stylesheet" />
+<link href="~/wclient/assets/css/style.css" rel="stylesheet" />
+
+@* ///========CSS========// *@
+
+
+@if (ViewData["CategoryData"] != null)
+{
+	@foreach (var item in ViewData["CategoryData"] as List<CategoryTbl>)
+	{
+		@*     <ul style="display: none;">
+            <li><a href="#">@item.Category</a></li>
+
+        </ul> *@
+@*         <label style="margin: 10px 15px; font-size: 20px;">
+			@item.Category
+		</label> *@
+
+        <a style="color: black;
+    font-size: 24px; padding:10px 20px;"  class="dropdown-toggle" data-bs-toggle="dropdown">@item.Category</a>
+	}
+}
+@* <ul style="display: none;">
+    <li><a href="#">Fresh Meat</a></li>
+    <li><a href="#">Vegetables</a></li>
+    <li><a href="#">Fruit &amp; Nut Gifts</a></li>
+    <li><a href="#">Fresh Berries</a></li>
+    <li><a href="#">Ocean Foods</a></li>
+    <li><a href="#">Butter &amp; Eggs</a></li>
+    <li><a href="#">Fastfood</a></li>
+    <li><a href="#">Fresh Onion</a></li>
+    <li><a href="#">Papayaya &amp; Crisps</a></li>
+    <li><a href="#">Oatmeal</a></li>
+    <li><a href="#">Fresh Bananas</a></li>
+</ul> *@
+
+
+
+
+@* ///========JAVASCRIPT========// *@
+
+
+<script src="~/wclient/assets/js/jquery-3.3.1.min.js"></script>
+<script src="~/wclient/assets/js/bootstrap.min.js"></script>
+<script src="~/wclient/assets/js/jquery.nice-select.min.js"></script>
+<script src="~/wclient/assets/js/jquery-ui.min.js"></script>
+<script src="~/wclient/assets/js/jquery.slicknav.js"></script>
+<script src="~/wclient/assets/js/mixitup.min.js"></script>
+<script src="~/wclient/assets/js/owl.carousel.min.js"></script>
+<script src="~/wclient/assets/js/main.js"></script>
